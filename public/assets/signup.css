@@ -1,0 +1,109 @@
+@import "~ionicons/dist/css/ionicons.min.css";
+
+link[rel="icon"] {
+    border-radius: 50%;
+}
+
+body{
+    background: #16b90d1c;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container{
+    background: white;
+    width: 25%;
+    height: 30%;
+    border: 2px solid rgb(22, 173, 22);
+    justify-content: center;
+    margin-top: 7%;
+    /* margin-left: 10%; */
+    position: relative;
+    border-radius: 20px;
+}
+
+.container .image{
+    border-radius: 50%;
+}
+
+.container .image img{
+    border-radius: 50%;
+    border: 2px solid rgb(22, 173, 22);
+    position: absolute;
+    margin-top: -90px;
+    margin-left: 35%;
+    height: 125px;
+    width: 125px;
+}
+
+.h1{
+    margin-left: 25%;
+    text-transform: capitalize;
+    margin-top: 10%;
+    color: rgb(22, 173, 22);
+}
+
+.container p{
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 0%;
+}
+
+.container input{
+    background: none;
+    width: 80%;
+    margin: 20px;
+    margin-left: 30px;
+    height: 30px;
+    color: rgb(22, 173, 22);
+    border: none;
+    border-bottom: 2px solid rgb(22, 173, 22);
+
+}
+
+.container label{
+    font-weight: 100;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.container .profile{
+    width: 50%;
+}
+
+.container .register{
+    width: 20%;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 40%;
+    background: rgb(22, 173, 22);
+    border: 1px solid white;
+    color:white;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.container .register:hover{
+    background: white;
+    border: 1px solid rgb(22, 173, 22);
+    color:rgb(22, 173, 22);
+}
+
+.container p {
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 0%;
+    margin-left: 30px;
+}
+
+.container p a{
+    color: rgb(22, 173, 22);
+    text-decoration: none;
+}
+
+.container p a:hover{
+    text-decoration: underline;
+}
+
