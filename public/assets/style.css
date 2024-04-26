@@ -1,0 +1,12 @@
+.title{
+    background: rgb(22, 173, 22);
+    margin: auto 20px;
+    color: white;
+    list-style: none v;
+}
+
+
+
+.title a{
+    text-decoration: none;
+}
