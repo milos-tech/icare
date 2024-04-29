@@ -1,5 +1,10 @@
+body{
+    background: url(../assets/image/cool.jpg) no-repeat;
+    background-size: cover;
+}
+
 .title{
-    background: rgb(22, 173, 22);
+    background: rgb(14, 142, 228);
     margin: auto 20px;
     color: white;
     display: flex;

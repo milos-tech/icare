@@ -15,7 +15,7 @@
 
     if($_SERVER['REQUEST_URI'] =="/" || in_array($route, ["", "index"])){
 
-        require_once '../views/home.php';
+        require_once '../views/landing.php';
     }
 
     if(in_array($route, ["signup", "register"])){
