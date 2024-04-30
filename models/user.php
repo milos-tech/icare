@@ -16,12 +16,14 @@
             $password = $_POST['password'];
             $password = password_hash($password, PASSWORD_DEFAULT);
             $profile = $_FILES['profpic']['name'];
-            $shortenedFileName = substr($profile, 0, 5);
 
-            $sql= "INSERT INTO users(name, email, tel, location,password, profile) 
-            values('$name','$email', '$phone', '$location', '$password', 'shortenedFileName')";
+            $sql = "INSERT INTO users(name, email, tel, location,password, profile) 
+            values('$name','$email', '$phone', '$location', '$password', '$profile')";
+
+            $execute = $this->conn->exec($sql);
             
-            if(! mysqli_query($this->conn,$sql)){
+            // die($execute);
+            if(!$execute){
                 return [False, $this->conn->errno];
                
             }
@@ -34,13 +36,13 @@
             $password = $_POST['password'];
     
             $select  = "SELECT * from users where email = '$email'";
-            $query = mysqli_query($this->conn,$select);
+            $query = $this->conn->query($select);
             
             if(!$query){
                 return [False, $this->conn->errno];  
             }
 
-            $sql = mysqli_fetch_assoc($query);
+            $sql = $query->fetchArray(SQLITE3_ASSOC);
              
             $passverify = password_verify($password, $sql['password']);
             return $passverify;

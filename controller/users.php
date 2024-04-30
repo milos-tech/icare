@@ -50,10 +50,9 @@
 
             $model = new user();
             $obj = $model->seluser();
-
-            
+ 
             if($obj){
-                header("location: /index");    
+                header("location: /home");    
             }else{
                 header("location: /signin"); 
             }

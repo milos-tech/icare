@@ -1,21 +1,23 @@
 <?php
 
-$conn = new mysqli('localhost','root','Password','icare');
-if($conn->connect_error){
+// $conn = new mysqli('localhost','root','Password','icare');
+// if($conn->connect_error){
 
-    die('Connection Failed : '.$conn->connect_error);
+//     die('Connection Failed : '.$conn->connect_error);
+// }
+
+class icare extends SQLite3{
+    function __construct(){
+        $this->open('icare.db') ; 
+    }
 }
+
+$conn = new icare('icare.db');
+if(!$conn){
+    echo $conn->lastInsertError();
+}
+
 return $conn;
-
-
-
-// $db = new SQLite3('database.sqlite');
-
-// <<<END
-//     $update = "UPDATE";
-// END;
-
-// $db->exec($update);
 
 ?>
 

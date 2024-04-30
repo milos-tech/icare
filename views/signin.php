@@ -7,14 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/signup.css">
-    <link rel="icon" type="image/x-icon" href="assets\image\icare.jpeg">
+    <link rel="icon" type="image/x-icon" href="assets\image\icare3.png">
     <title>icare Signin</title>
 </head>
 <body>
-<div class="container">
+    <div class="message">
         <div class="image">
-            <img src="..\assets\image\icare.jpeg">
+            <img src="..\assets\image\icare3.png">
         </div>
+        <h1>icare Signup</h1>
+        <p>To proceed you are required to fill in your credentials then hit the register button</p>
+    </div>
+    <div class="container">
         <h1 class="h1">signin into your account<h1>
         <form method="post" enctype="multipart/form-data">
             <input type="text" placeholder="Enter your name please" name="name" required>

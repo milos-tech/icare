@@ -5,34 +5,45 @@ link[rel="icon"] {
 }
 
 body{
-    background: #16b90d1c;
+    background: white ;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.message{
+    background: rgb(40, 188, 247);
+    width: 25%;
+    height: 665px;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.message .image img{
+    margin: 20% 40%;
+    border-radius: 30%;
+    background: white;
+    width: 100px;
+    height: auto 120px;
+    padding: 10px;
 }
 
 .container{
     background: white;
     width: 25%;
     height: 30%;
-    border: 2px solid rgb(22, 173, 22);
+    border: 2px solid rgb(40, 188, 247);
     justify-content: center;
-    margin-top: 7%;
-    /* margin-left: 10%; */
+    margin-top: 10%;
+    padding-top: 20px;
     position: relative;
-    border-radius: 20px;
-}
-
-.container .image{
-    border-radius: 50%;
 }
 
 .container .image img{
     border-radius: 50%;
-    border: 2px solid rgb(22, 173, 22);
+    border: 2px solid rgb(40, 188, 247);
     position: absolute;
-    margin-top: -90px;
-    margin-left: 35%;
+
     height: 125px;
     width: 125px;
 }
@@ -41,7 +52,7 @@ body{
     margin-left: 25%;
     text-transform: capitalize;
     margin-top: 10%;
-    color: rgb(22, 173, 22);
+    color: rgb(40, 188, 247);
 }
 
 .container p{
@@ -56,16 +67,18 @@ body{
     margin: 20px;
     margin-left: 30px;
     height: 30px;
-    color: rgb(22, 173, 22);
+    color: rgb(40, 188, 247);
     border: none;
-    border-bottom: 2px solid rgb(22, 173, 22);
+    border-bottom: 2px solid rgb(40, 188, 247);
 
 }
 
-.container label{
+.container form .icons{
     font-weight: 100;
     font-size: 20px;
-    margin-left: 30px;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: -7%;
 }
 
 .container .profile{
@@ -77,7 +90,7 @@ body{
     border-radius: 10px;
     height: 40px;
     margin-left: 40%;
-    background: rgb(22, 173, 22);
+    background: rgb(40, 188, 247);
     border: 1px solid white;
     color:white;
     font-weight: 300;
@@ -87,8 +100,8 @@ body{
 
 .container .register:hover{
     background: white;
-    border: 1px solid rgb(22, 173, 22);
-    color:rgb(22, 173, 22);
+    border: 1px solid rgb(40, 188, 247);
+    color:rgb(40, 188, 247);
 }
 
 .container p {
@@ -99,7 +112,7 @@ body{
 }
 
 .container p a{
-    color: rgb(22, 173, 22);
+    color: rgb(40, 188, 247);
     text-decoration: none;
 }
 

@@ -30,16 +30,23 @@
         }
     }
 
-    if(in_array($route, ["signin", "login"])){
+    if(in_array($route, ["signin", "login",])){
+        if($req_met == "POST"){
+            $usersignin = new users();
+            $states = $usersignin-> seluser();
+        }else{
+            require_once '../views/signin.php';
+        }
+        
+    }
+
+    if(in_array($route, ["home"])){//what enters here as the array is the destinated file 
         if($req_met == "POST"){
             $usersignin = new users();
             $states = $usersignin-> seluser();
         }
-        require_once '../views/signin.php';
+            require_once '../views/home.php';
+        
     }
-
-    // else{
-    //     require_once '../views/home.php';   
-    // }
 
 ?>
