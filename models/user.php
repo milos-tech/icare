@@ -1,5 +1,4 @@
 <?php
-
     class user{
 
         private $conn;
@@ -17,14 +16,21 @@
             $password = password_hash($password, PASSWORD_DEFAULT);
             $profile = $_FILES['profpic']['name'];
 
-            $sql = "INSERT INTO users(name, email, tel, location,password, profile) 
-            values('$name','$email', '$phone', '$location', '$password', '$profile')";
+            if(!empty($profile)){
+                $sql = "INSERT INTO users(name, email, tel, location,password, profile) 
+                values('$name','$email', '$phone', '$location', '$password', '$profile')";
+            }
+            else{
+                $sql = "INSERT INTO users(name, email, tel, location,password) 
+                values('$name','$email', '$phone', '$location', '$password')";
 
+            }
             $execute = $this->conn->exec($sql);
-            
-            // die($execute);
+            echo '<pre>';
+            print_r($execute);
+            die;
             if(!$execute){
-                return [False, $this->conn->errno];
+                return [False, $this->conn->lastErrorMsg()];
                
             }
             return [True, "Registration successful"];
@@ -44,9 +50,32 @@
 
             $sql = $query->fetchArray(SQLITE3_ASSOC);
              
-            $passverify = password_verify($password, $sql['password']);
-            return $passverify;
+            if(password_verify($password, $sql['password'])){
 
+                unset($sql['password']);
+                $_SESSION['userInfo'] = $sql;
+
+                return True;
+            };
+
+            return False;
+
+        }
+
+        function getprofile(){
+            $email = $_POST['email'];
+
+            $select  = "SELECT profile from users where email = '$email'";
+            $this->conn->query($select);
+            $this->conn->bind('email', $email);
+            $result = $this->conn->single();
+
+
+            if ($result) {
+                return $result['profile'];
+            } else {
+                return 'default_profile.jpg';
+            }
         }
 
     }

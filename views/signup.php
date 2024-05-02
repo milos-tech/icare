@@ -16,45 +16,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <title>icare Signup</title>
 
 </head>
 <body>
-    <div class="message">
-        <div class="image">
-            <img src="..\assets\image\icare3.png">
+    <div class="main-container">
+        <div class="message">
+            <div class="image">
+                <img src="..\assets\image\icare3.png">
+            </div>
+            <h1>icare Signup</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To proceed you are required to fill in your credentials then hit the register button</p>
         </div>
-        <h1>icare Signup</h1>
-        <p>To proceed you are required to fill in your credentials then hit the register button</p>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                <h1 class="h1">signup</h1>
+                 
+                <input type="text" placeholder="Enter your name please" name="name" required>
+                <label for="username" class="icons"><i class="fa-solid fa-user"></i></label>
+
+                <input type="email" placeholder="Enter your email please" name="email" required>
+                <label for="username" class="icons"><i class="fa-solid fa-envelope"></i></label>
+
+                <input type="text" placeholder="Enter phone name please" name="phone" required>
+                <label for="username" class="icons"><i class="fa-solid fa-phone"></i></label>
+
+                <select name="location" required>
+                    <option value="Center" disabled selected>choose location(Region)</option>
+                    <option value="Adamawa">Adamawa</option>
+                    <option value="Centre">Centre</option>
+                    <option value="East">East</option>
+                    <option value="Far North">Far North</option>
+                    <option value="Littoral">Littoral</option>
+                    <option value="North">North</option>
+                    <option value="North West">North West</option>
+                    <option value="South">South</option>
+                    <option value="South West">South West</option>
+                    <option value="West">West</option>
+                </select>
+
+                <input type="password" placeholder="Enter current Password" name="password" id="password" required>
+                <label for="password" class="icons"><i class="fa-solid fa-eye" id = "togglePassword"></i></label>
+                <?php
+                //  echo '<p style="color: red;">'.$invalid_pass.'</p>'
+                ?>
+                <input type="Password" placeholder="Confirm Password" name="passcon" id="confirmPassword" required>
+                <label class="icons"><i class="fa-solid fa-eye" id = "toggleconfirmPassword"></i></label>
+                <label for="profile">Profile picture: </label>
+                <input type="file" class="profile" name="profpic" >
+
+                <input type="submit" value="Register" name="register" class="register">
+                <p>have an account ?<a href="/signin"> Signin</p>
+            </form>
+        </div>
     </div>
-    <div class="container">
-        <form method="post" enctype="multipart/form-data">
-
-            <input type="text" placeholder="Enter your name please" name="name" required>
-
-            <label for="username" class="icons"><i class="fa-solid fa-envelope"></i></label>
-            <input type="email" placeholder="Enter your email please" name="email" required>
-
-            <label for="username" class="icons"><i class="fa-solid fa-phone"></i></label>
-            <input type="text" placeholder="Enter phone name please" name="phone" required>
-
-            <label for="location" class="icons"><i class="fa-solid fa-map-marker-alt"></i></label>
-            <input type="text" placeholder="Enter current location(Region)" name="location" required>
-
-            <label for="password" class="icons"><i class="fa-solid fa-eye" id = "togglePassword"></i></label>
-            <input type="password" placeholder="Enter current Password" name="password" id="password" required>
-            <?php
-            //  echo '<p style="color: red;">'.$invalid_pass.'</p>'
-            ?>
-             <label class="icons"><i class="fa-solid fa-eye" id = "toggleconfirmPassword"></i></label>
-            <input type="confirmPassword" placeholder="Confirm Password" name="passcon" id="confirmPassword" required>
-            <label for="profile">Profile picture: </label>
-            <input type="file" class="profile" name="profpic" >
-            <input type="submit" value="Register" name="register" class="register">
-            <p>have an account ?<a href="/signin"> Signin</p>
-        </form>
-    </div>
-
-    <script src="/assets/javascript/"></script>
+    <script src="/assets/javascript/script.js"></script>
 </body>
 </html>

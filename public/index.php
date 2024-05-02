@@ -14,7 +14,6 @@
     $route = explode('/', $_SERVER['REQUEST_URI'])[1];
 
     if($_SERVER['REQUEST_URI'] =="/" || in_array($route, ["", "index"])){
-
         require_once '../views/landing.php';
     }
 
@@ -47,6 +46,10 @@
         }
             require_once '../views/home.php';
         
+    }
+
+    if(in_array($route, ['appointment'])){
+        require_once '../views/appointment.php';
     }
 
 ?>

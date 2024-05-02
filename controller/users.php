@@ -22,6 +22,7 @@
             else{
                 if($passconf !== $password){
                     $passconferror = "passwords must match";
+                    $_SESSION['passconferror'] = $passconf;
                 }
                 else{
                     $password= password_hash($password,PASSWORD_BCRYPT);
@@ -47,7 +48,6 @@
         }
 
         function seluser(){
-
             $model = new user();
             $obj = $model->seluser();
  
@@ -56,6 +56,7 @@
             }else{
                 header("location: /signin"); 
             }
+            
         }
     }
 
