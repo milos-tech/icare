@@ -11,7 +11,6 @@
             $passconf = $postArray['passcon'];
             $target_dir = $_SESSION['root_dir'] . "/public/assets/image/uploads/";
             $profile = $_FILES['profpic']['name'];
-            $shortenedFileName = substr($profile, 0, 5);
     
             $target_file = $target_dir . basename($_FILES["profpic"]["name"]);
     
@@ -52,7 +51,7 @@
             $obj = $model->seluser();
  
             if($obj){
-                header("location: /home");    
+                header("location: /dashboard");    
             }else{
                 header("location: /signin"); 
             }

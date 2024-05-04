@@ -25,9 +25,9 @@
                 values('$name','$email', '$phone', '$location', '$password')";
 
             }
-            $execute = $this->conn->exec($sql);
+            $execute = $this->conn->exec($sql); 
             echo '<pre>';
-            print_r($execute);
+            print_r($sql);
             die;
             if(!$execute){
                 return [False, $this->conn->lastErrorMsg()];
@@ -49,6 +49,7 @@
             }
 
             $sql = $query->fetchArray(SQLITE3_ASSOC);
+
              
             if(password_verify($password, $sql['password'])){
 
@@ -58,24 +59,8 @@
                 return True;
             };
 
-            return False;
+            return False;  
 
-        }
-
-        function getprofile(){
-            $email = $_POST['email'];
-
-            $select  = "SELECT profile from users where email = '$email'";
-            $this->conn->query($select);
-            $this->conn->bind('email', $email);
-            $result = $this->conn->single();
-
-
-            if ($result) {
-                return $result['profile'];
-            } else {
-                return 'default_profile.jpg';
-            }
         }
 
     }

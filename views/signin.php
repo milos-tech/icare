@@ -22,7 +22,6 @@
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To proceed you are required to fill in your credentials then hit the Login button</p>
         </div>
         <div class="container">
-           
             <form method="post" enctype="multipart/form-data">
                 <h1 class="h1">signin</h1>
                 <input type="text" placeholder="Enter your name please" name="name" required>
