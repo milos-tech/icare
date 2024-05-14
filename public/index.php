@@ -12,6 +12,9 @@
     $_SESSION['root_dir'] = $root;
 
     include_once $root . "/config/autoloader.php";
+    // echo '<pre>';
+    // print_r($_SERVER);
+    // die;
 
     $req_met = $_SERVER['REQUEST_METHOD'];
 

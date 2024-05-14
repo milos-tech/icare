@@ -17,22 +17,15 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-/* .container .image{
-    background: url(../assets/image/doctor.jpg);
-    height: 30%;
-    width: 30%;
-} */
-
 .container{
     display: grid;
     background: white;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     border: 2px solid blue;
     width: 50%;
 }
 
 .form{
-    /* max-width: 400px; */
     padding: 20px;
     border: 1px solid #ccc;
     background: white;

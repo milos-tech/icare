@@ -1,6 +1,7 @@
 @import "~ionicons/dist/css/ionicons.min.css";
 *{
     font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
 body{
@@ -10,14 +11,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background: rgb(197, 226, 232);
     background-size: cover;
 }
 
 .main-container{
-    
-    height: 40%;
+    /* border-radius: 50px; */
     width: 50%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -32,6 +31,7 @@ body{
     place-items: center;
     justify-content: center;
     align-items: center;
+    border-bottom-left-radius: 50px;
 }
 
 .main-container .message .image{
@@ -63,6 +63,7 @@ body{
     border: 2px solid rgb(40, 188, 247);
     justify-content: center;
     background: white;
+    border-top-right-radius: 50px;
 }
 
 .main-container .container form h1{

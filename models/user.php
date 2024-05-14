@@ -26,8 +26,6 @@
 
             }
             $execute = $this->conn->exec($sql); 
-            echo '<pre>';
-            print_r($sql);
             die;
             if(!$execute){
                 return [False, $this->conn->lastErrorMsg()];
@@ -43,12 +41,23 @@
     
             $select  = "SELECT * from users where email = '$email'";
             $query = $this->conn->query($select);
+
             
             if(!$query){
                 return [False, $this->conn->errno];  
             }
 
             $sql = $query->fetchArray(SQLITE3_ASSOC);
+
+            if($sql['profpic']!= ''){
+                $profile_image = $sql['profpic'];
+            } else {
+                $default_image = 'assets/image/images.jpeg';
+                $profile_image = $default_image;
+            }
+            
+            // Display the profile image
+            // echo '<img src="' . $profile_image . '" alt="Profile Image">';
 
              
             if(password_verify($password, $sql['password'])){

@@ -1,3 +1,6 @@
+<?php
+    // $user = $_SESSION['userInfo'];
+?>
 <!DOCTYPE html>
 <html>
 <head>

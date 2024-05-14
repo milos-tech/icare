@@ -1,14 +1,4 @@
-<?php
-        // require_once "../controller/users.php";
-
-        // $invalid = new users();
-        // $postArray = $password; $passconf;
-        // $inv = $invalid->adduser($postArray);
-        // // $_SESSION['invalid_pass'] = $invalid_pass;
-
-        
-
-?>
+f
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,10 +51,19 @@
                 <input type="password" placeholder="Enter current Password" name="password" id="password" required>
                 <label for="password" class="icons"><i class="fa-solid fa-eye" id = "togglePassword"></i></label>
                 <?php
-                //  echo '<p style="color: red;">'.$invalid_pass.'</p>'
+                    if(isset($_SESSION["invalid_pass"])){
+                        echo '<p style="color: red;">'.$_SESSION["invalid_pass"].'</p>';
+                        unset($_SESSION["invalid_pass"]);
+                    }
                 ?>
                 <input type="Password" placeholder="Confirm Password" name="passcon" id="confirmPassword" required>
                 <label class="icons"><i class="fa-solid fa-eye" id = "toggleconfirmPassword"></i></label>
+                <?php
+                    if(isset($_SESSION["passconferror"])){
+                        echo '<p style="color: red;">'.$_SESSION["passconferror"].'</p>';
+                        unset($_SESSION["passconferror"]);
+                    }
+                ?>
                 <label for="profile">Profile picture: </label>
                 <input type="file" class="profile" name="profpic" >
 

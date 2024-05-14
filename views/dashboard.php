@@ -1,13 +1,10 @@
-<?php
+    <?php
     if(!isset($_SESSION['userInfo'])){
         header("Location:/index");
         exit();
 
     }
-
-    $user = $_SESSION['userInfo'];
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,36 +17,45 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <title>icare</title>
 </head>
-<body>
-    <div class="title">
-        <div class="logo">
-            <img src="assets\image\icare3.png">
-            <span>Dashboard</span>
-        </div>
-
-
-
-        <input type="search" placeholder="search your favorite doctor">
-        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
-
-        <div class="pic">
-            <img class="profile" src="assets/image/uploads/<?=$user['profile']?>";>
-            <i class="fa-solid fa-camera"></i>
-
-        </div>
-    </div>
+<body> 
 
     <div class="menu">
         <h2>Menu</h2>
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="appointment">Book appointment</a></li>
+            <li><a href="#">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>About</span>
+            </a></li>
+            <li><a href="#">                
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Profile</span>
+            </a></li>
+            <li><a href="appointment">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Book apppointment</span>
+            </a></li>
+            <li class="signout"><a href="appointment">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a></li>
         </ul>
     </div>
 
-    <div>
-
+    <div class="main-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <span>User</span>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="search-doctor">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Search a doctor">
+            </div>
+            <div class="pic">
+                <img class="profile" src="assets/image/uploads/<?$profile_image?>";>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
